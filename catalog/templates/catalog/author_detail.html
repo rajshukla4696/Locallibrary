@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Author: {{ author.last_name }}, {{ author.first_name }}</h1>
+<p><a href="{% url 'author_update' author.pk %}">Edit</a></p>
+<small>{{ author.date_of_birth }}</small>
+<hr>
+<div style="margin-left:20px;margin-top:20px">
+  <h4>Books</h4>
+  {% for book in books %}
+  <p><b><a href="/catalog/book/{{ book.id }}">{{ book.title }}</a></b><br>
+  {{ book.summary }}</p>
+  {% endfor %}
+</div>
+{% endblock %}
