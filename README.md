@@ -1,3 +1,0 @@
-# Locallibrary
-
-Project in Django
